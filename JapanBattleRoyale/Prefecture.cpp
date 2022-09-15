@@ -1,8 +1,10 @@
 ﻿#include "stdafx.h"
+#include "IDUtils.hpp"
 #include "Prefecture.hpp"
 
 Prefecture::Prefecture(Vec2 pos)
 {
+	this->id = generateID();
 	this->center = pos;
 }
 
@@ -78,6 +80,11 @@ void Prefecture::setRegen(int regen)
 int Prefecture::setRegen()
 {
 	return this->regenerationRate;
+}
+
+int Prefecture::getID()
+{
+	return this->id;
 }
 
 void Prefecture::move(Vec2 motion)

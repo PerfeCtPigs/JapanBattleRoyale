@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "Prefecture.hpp"
 #include "NormalState.hpp"
+#include "IDUtils.hpp"
 
 void NormalState::onEnter(Prefecture& prefecture)
 {

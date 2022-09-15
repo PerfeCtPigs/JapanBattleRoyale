@@ -113,6 +113,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IDUtils.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NormalState.cpp" />
     <ClCompile Include="Prefecture.cpp" />
@@ -316,6 +317,7 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IDUtils.hpp" />
     <ClInclude Include="IPrefectureState.hpp" />
     <ClInclude Include="NormalState.hpp" />
     <ClInclude Include="Prefecture.hpp" />

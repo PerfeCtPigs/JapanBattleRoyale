@@ -37,6 +37,8 @@ public:
 	void setRegen(int regen);
 	int setRegen();
 
+	int getID();
+
 	void move(Vec2 motion);
 
 	bool isDead();
@@ -50,6 +52,8 @@ public:
 	void setAttack(AttackType type, IPrefectureState* state);
 	void attack(AttackType type);
 private:
+	int id;
+
 	Vec2 center;
 	Vec2 motion = { 0, 0 };
 

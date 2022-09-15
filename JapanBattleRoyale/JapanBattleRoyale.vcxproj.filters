@@ -154,6 +154,9 @@
     <Filter Include="Source Files\Prefectures\Prefectures">
       <UniqueIdentifier>{0473e981-121d-4cbf-baeb-8b80bbf22a46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{2e3a842e-e391-4923-9606-cc887f98c8a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -170,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="PrefectureTokyo.cpp">
       <Filter>Source Files\Prefectures\Prefectures</Filter>
+    </ClCompile>
+    <ClCompile Include="IDUtils.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -814,6 +820,9 @@
     </ClInclude>
     <ClInclude Include="PrefectureTokyo.hpp">
       <Filter>Header Files\Prefecture\Prefectures</Filter>
+    </ClInclude>
+    <ClInclude Include="IDUtils.hpp">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
