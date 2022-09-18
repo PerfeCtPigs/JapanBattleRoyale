@@ -18,7 +18,6 @@ void Main()
 
 	while (System::Update())
 	{
-		ClearPrint();
 		tokyo.update();
 		tokyo.draw();
 	}

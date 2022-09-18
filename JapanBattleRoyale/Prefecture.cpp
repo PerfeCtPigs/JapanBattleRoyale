@@ -139,14 +139,14 @@ Texture Prefecture::getTexture()
 	return this->texture;
 }
 
-void Prefecture::setCollision(Array<Vec2> collision)
+void Prefecture::setPolygon(Polygon polygon)
 {
-	this->collisionVertices = collision;
+	this->polygon = polygon;
 }
 
-Array<Vec2> Prefecture::getCollision()
+Polygon Prefecture::getPolygon()
 {
-	return this->collisionVertices;
+	return this->polygon;
 }
 
 void Prefecture::setAttack(AttackType type, IPrefectureState* state)
@@ -165,8 +165,11 @@ void Prefecture::attack(AttackType type)
 void Prefecture::update()
 {
 	if(this->state) this->state->onUpdate(*this);
-	this->center.moveBy(this->motion);
-	this->center.clamp({ 0, 0, 1920, 1080 });
+	Vec2 to = this->center.movedBy(this->motion);
+	to.clamp({ 0, 0, 1920, 1080 });
+	Vec2 fixedMotion = to - this->center;
+	this->center.moveBy(fixedMotion);
+	this->polygon.moveBy(fixedMotion);
 	this->motion.set(0, 0);
 }
 

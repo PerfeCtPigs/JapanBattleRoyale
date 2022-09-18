@@ -51,8 +51,8 @@ public:
 	void setTexture(Texture texture);
 	Texture getTexture();
 
-	void setCollision(Array<Vec2> collision);
-	Array<Vec2> getCollision();
+	void setPolygon(Polygon polygon);
+	Polygon getPolygon();
 
 	void setAttack(AttackType type, IPrefectureState* state);
 	void attack(AttackType type);
@@ -71,7 +71,7 @@ private:
 	int regenerationRate = 10;
 
 	Texture texture;
-	Array<Vec2> collisionVertices;
+	Polygon polygon;
 
 	Stopwatch stateTimer;
 
