@@ -25,8 +25,8 @@ public:
 	void setPos(Vec2 pos);
 	Vec2 getPos();
 
-	void setRotation(int rotation);
-	int getRotation();
+	void setRotation(double rotation);
+	double getRotation();
 	void setDirection(Vec2 direction);
 	Vec2 getDirection();
 
@@ -60,7 +60,7 @@ private:
 	int id;
 
 	Vec2 center;
-	int rotation;
+	double rotation;
 	Vec2 motion = { 0, 0 };
 
 	bool deadFlag = false;

@@ -41,12 +41,20 @@ Vec2 Prefecture::getPos()
 	return this->center;
 }
 
-void Prefecture::setRotation(int rotation)
+void Prefecture::setRotation(double rotation)
 {
+	while (rotation < 0)
+	{
+		rotation += 360.0;
+	}
+	while (rotation > 360)
+	{
+		rotation -= 360.0;
+	}
 	this->rotation = rotation;
 }
 
-int Prefecture::getRotation()
+double Prefecture::getRotation()
 {
 	return this->rotation;
 }
