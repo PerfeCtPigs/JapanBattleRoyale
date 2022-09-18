@@ -41,6 +41,38 @@ Vec2 Prefecture::getPos()
 	return this->center;
 }
 
+void Prefecture::setRotation(int rotation)
+{
+	this->rotation = rotation;
+}
+
+int Prefecture::getRotation()
+{
+	return this->rotation;
+}
+
+void Prefecture::setDirection(Vec2 direction)
+{
+	direction.normalize();
+	double x = direction.x;
+	double y = direction.y;
+
+	if (y < 0.0)
+	{
+		int result = 450 - (Math::ToDegrees(Math::Acos(direction.x)));
+		this->rotation = result >= 360 ? result - 360 : result;
+	}
+	else
+	{
+		this->rotation = Math::ToDegrees(Math::Acos(direction.x)) + 90;
+	}
+}
+
+Vec2 Prefecture::getDirection()
+{
+	return Vec2(Math::Cos(Math::ToRadians(this->rotation - 90)), Math::Sin(Math::ToRadians(this->rotation - 90)));
+}
+
 void Prefecture::setHealth(int health)
 {
 	this->health = health;
@@ -140,6 +172,6 @@ void Prefecture::update()
 
 const void Prefecture::draw()
 {
-	this->texture.drawAt(this->center);
+	this->state->onDraw(*this);
 	return;
 }
